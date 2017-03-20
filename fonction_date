@@ -1,0 +1,9 @@
+Age en fonction d'une date :
+  public function getAge() {
+      //date au format jj/mm/aaaa
+      $dateNaissance = explode("/", $this->dateNaissance);
+      $Date = explode("/", date("d/m/Y"));
+      if (($dateNaissance[1] <= $Date[1]) && ($dateNaissance[0] <= $Date[0])) $Age = $Date[2] - $dateNaissance[2];
+      else $Age = $Date[2] - $dateNaissance[2] - 1;
+      return $Age;
+  }
